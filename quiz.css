@@ -34,9 +34,12 @@ h2 {
   transition: background 0.3s;
 }
 
-.btn:hover {
-  background: #0056b3;
-}
+/* .btn:hover {
+  background: #f30b60;
+} */
+ .btn.active {
+      background-color: green;
+    }
 
 #next-btn, #start-btn {
   display: none;
