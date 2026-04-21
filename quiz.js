@@ -95,6 +95,7 @@ const resultElement = document.getElementById("result");
 let currentQuestionIndex = 0;
 let score = 0;
 
+
 // Start button click → begins quiz
 startButton.addEventListener("click", startQuiz);
 
@@ -134,9 +135,36 @@ function showQuestion() {
     const button = document.createElement("button");
     button.innerText = answer.text;
     button.classList.add("btn");
+    button.addEventListener("click", function () {
+      const buttons = document.querySelectorAll(".btn");
+
+      // Sab buttons se active remove
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      // Sirf current button ko active banao
+      button.classList.add("active");
+    });
     button.addEventListener("click", () => selectAnswer(answer));
     answerButtons.appendChild(button);
   });
+
+
+  // const btn = document.querySelectorAll(".btn");
+
+  //   btn.addEventListener("click", function() {
+  //     btn.classList.toggle("active");
+  //   });
+
+  // options.forEach(option => {
+  //   option.addEventListener("click", () => {
+
+  //     // पहले सभी options से active हटाओ
+  //     options.forEach(opt => opt.classList.remove("active"));
+
+  //     // जिस पर click हुआ उसे active बनाओ
+  //     option.classList.add("active");
+  //   });
+  // });
 }
 
 // Clear previous buttons
